@@ -12,7 +12,7 @@ componentDidMount : function () {
 
     var productId = this.props.productId;
 
-    this.serverRequestProd = $.get("http://localhost/reactjs-restapi-demo/api/product/read_one.php?id=" + productId, function (product) {
+    this.serverRequestProd = $.get("http://localhost/reactjs-restapi-level1/api/product/read_one.php?id=" + productId, function (product) {
         this.setState({category_name: product.category_name});
         this.setState({id: product.id});
         this.setState({name: product.name});

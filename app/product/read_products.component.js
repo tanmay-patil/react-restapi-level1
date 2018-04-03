@@ -8,7 +8,7 @@ window.ReadProductsComponent = React.createClass({
     // on mount, fetch all products and stored them as this component's state
     componentDidMount: function () {
 
-        this.serverRequest = $.get("http://localhost/reactjs-restapi-demo/api/product/read.php", function (products) {
+        this.serverRequest = $.get("http://localhost/reactjs-restapi-level1/api/product/read.php", function (products) {
             this.setState({products: products.records});
         }.bind(this));
     },

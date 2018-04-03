@@ -56,7 +56,6 @@ var MainApp = React.createClass({
 });
 
 // go and render the whole React component on to the div with id 'content'
-ReactDOM.render( <
-    MainApp / > ,
+ReactDOM.render( <MainApp/> ,
     document.getElementById('content')
 );

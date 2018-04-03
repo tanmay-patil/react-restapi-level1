@@ -1,37 +1,37 @@
 // component that contains the logic to delete a product
 window.DeleteProductComponent = React.createClass({
-// componentDidMount will be here
-// on mount, change header text
-componentDidMount : function () {
-    $('.page-header h1').text('Delete Product');
-},
+    // componentDidMount will be here
+    // on mount, change header text
+    componentDidMount: function() {
+        $('.page-header h1').text('Delete Product');
+    },
 
-// onDelete will be here
-// handle single row deletion
-onDelete : function (e) {
+    // onDelete will be here
+    // handle single row deletion
+    onDelete: function(e) {
 
-    // product to delete
-    var productId = this.props.productId;
+        // product to delete
+        var productId = this.props.productId;
 
-    // submit form data to api
-    $.ajax({
-        url: "http://localhost/reactjs-restapi-demo/api/product/delete.php",
-        type: "POST",
-        contentType: 'application/json',
-        data: JSON.stringify({'id': productId}),
-        success: function (response) {
-            this
-                .props
-                .changeAppMode('read');
-        }.bind(this),
-        error: function (xhr, resp, text) {
-            // show error in console
-            console.log(xhr, resp, text);
-        }
-    });
-},
+        // submit form data to api
+        $.ajax({
+            url: "http://localhost/reactjs-restapi-level1/api/product/delete.php",
+            type: "POST",
+            contentType: 'application/json',
+            data: JSON.stringify({ 'id': productId }),
+            success: function(response) {
+                this
+                    .props
+                    .changeAppMode('read');
+            }.bind(this),
+            error: function(xhr, resp, text) {
+                // show error in console
+                console.log(xhr, resp, text);
+            }
+        });
+    },
 
-// render will be here
+    // render will be here
 render : function () {
 
     return (

@@ -1,4 +1,5 @@
 window.CreateProductComponent = React.createClass({
+    // initial component states will be here
 // initialize values
 getInitialState : function () {
     return {
@@ -13,7 +14,7 @@ getInitialState : function () {
 
 // on mount, get all categories and store them in this component's state
 componentDidMount : function () {
-    this.serverRequest = $.get("http://localhost/reactjs-restapi-demo/api/category/read.php", function (categories) {
+    this.serverRequest = $.get("http://localhost/reactjs-restapi-level1/api/category/read.php", function (categories) {
         this.setState({categories: categories.records});
     }.bind(this));
 
@@ -62,7 +63,7 @@ onSave : function (e) {
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/reactjs-restapi-demo/api/product/create.php",
+        url: "http://localhost/reactjs-restapi-level1/api/product/create.php",
         type: "POST",
         contentType: 'application/json',
         data: JSON.stringify(form_data),

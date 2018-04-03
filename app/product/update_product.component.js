@@ -20,13 +20,13 @@ getInitialState : function () {
 componentDidMount : function () {
 
     // read categories
-    this.serverRequestCat = $.get("http://localhost/reactjs-restapi-demo/api/category/read.php", function (categories) {
+    this.serverRequestCat = $.get("http://localhost/reactjs-restapi-level1/api/category/read.php", function (categories) {
         this.setState({categories: categories.records});
     }.bind(this));
 
     // read one product data
     var productId = this.props.productId;
-    this.serverRequestProd = $.get("http://localhost/reactjs-restapi-demo/api/product/read_one.php?id=" + productId, function (product) {
+    this.serverRequestProd = $.get("http://localhost/reactjs-restapi-level1/api/product/read_one.php?id=" + productId, function (product) {
         this.setState({selectedCategoryId: product.category_id});
         this.setState({id: product.id});
         this.setState({name: product.name});
@@ -83,7 +83,7 @@ onSave : function (e) {
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/reactjs-restapi-demo/api/product/update.php",
+        url: "http://localhost/reactjs-restapi-level1/api/product/update.php",
         type: "POST",
         contentType: 'application/json',
         data: JSON.stringify(form_data),
